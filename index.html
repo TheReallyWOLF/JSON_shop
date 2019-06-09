@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Full Stack</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <main>
+        <div class="search form-group">
+            <input type="text" class="search form-control input_value" placeholder="Найти">
+        </div>
+        <div id="goods">
+            
+        </div>
+        <div id="show_item">
+            <div class="show_item_vis">
+                <button class="btn btn-default return">Назад</button>
+                <img src="" alt="" class="item_img">
+                <p class="item_description"></p>
+                <div class="item_photos"></div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script id="data-template" type="text/x-handlebars-template">
+        {{#each this}}
+            {{#if this.url}}
+            <div id="{{this.id}}" class="hidden-box main">
+                   <div class="hidden-box-image" style="background-image: url('{{this.url}}');">
+                        <div class="hidden-box-span">
+                            <span>{{this.title}}</span>
+                        </div>
+                    </div>
+                    <div class="hidden-box-data">
+                        <span>старт сезона {{this.startDate}}</span>
+                    </div>
+                    <div class="hidden-box-text">
+                        <p>{{this.description}}</p>
+                    </div>
+                    <div class="hidden-box-price">
+                        <p>Цена от: <span>{{this.minPrice}} &#8381;</span></p>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    </script>
+   
+    
+    <script src="js/jQuery.js"></script>
+    <script src="js/handlebars-v4.0.12.js"></script>
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
+
